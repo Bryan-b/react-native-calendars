@@ -262,12 +262,18 @@ const CalendarHeader = forwardRef((props: CalendarHeaderProps, ref) => {
       importantForAccessibility={importantForAccessibility} // Android
     >
       <View style={style.current.header}>
-        {_renderArrow('left')}
         <View style={style.current.headerContainer}>
           {_renderHeader()}
           {renderIndicator()}
         </View>
-        {_renderArrow('right')}
+        <View style={{ flexDirection:'row' }}>
+            <View style={{marginRight:10}}>
+                {_renderArrow('left')}
+            </View>
+            <View>
+                {_renderArrow('right')}
+            </View>
+        </View>
       </View>
       {renderDayNames()}
     </View>
